@@ -15,6 +15,7 @@ Table of Contents
    * [Docker for Azure with OMS](#azure-docker4azureoms)
       * [Deploy and Visualize](#deploy-and-visualize)
       * [Tips](#tips)
+      *  [Samples](#samples)
       * [Reporting Bugs](#reporting-bugs)
       * [Patches and pull requests](#patches-and-pull-requests)
       * [Usage of Operational Management Suite](#usage-of-operational-management-suite)
