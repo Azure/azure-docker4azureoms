@@ -1,0 +1,97 @@
+version: '3'
+services:
+  rabbitmq:
+    image: library/rabbitmq:3-management
+
+    ports:
+      - 15672:15672
+
+  config:
+    environment:
+      CONFIG_SERVICE_PASSWORD: "test"
+    image: sqshq/piggymetrics-config:latest
+    
+
+  registry:
+    environment:
+      CONFIG_SERVICE_PASSWORD: "test"
+    image: sqshq/piggymetrics-registry:latest
+    
+    ports:
+      - 8761:8761
+
+  gateway:
+    environment:
+      CONFIG_SERVICE_PASSWORD: "test"
+    image: sqshq/piggymetrics-gateway:latest
+    
+    ports:
+      - 8081:4000
+
+  auth-service:
+    environment:
+      CONFIG_SERVICE_PASSWORD: "test"
+      NOTIFICATION_SERVICE_PASSWORD: "test"
+      STATISTICS_SERVICE_PASSWORD: "test"
+      ACCOUNT_SERVICE_PASSWORD: "test"
+      MONGODB_PASSWORD: "test"
+    image: sqshq/piggymetrics-auth-service:latest
+    
+
+  auth-mongodb:
+    environment:
+      MONGODB_PASSWORD: "test"
+    image: sqshq/piggymetrics-mongodb:latest
+    
+
+  account-service:
+    environment:
+      CONFIG_SERVICE_PASSWORD: "test"
+      ACCOUNT_SERVICE_PASSWORD: "test"
+      MONGODB_PASSWORD: "test"
+    image: sqshq/piggymetrics-account-service:latest
+    
+
+  account-mongodb:
+    environment:
+      INIT_DUMP: account-service-dump.js
+      MONGODB_PASSWORD: "test"
+    image: sqshq/piggymetrics-mongodb:latest
+    
+
+  statistics-service:
+    environment:
+      CONFIG_SERVICE_PASSWORD: "test"
+      MONGODB_PASSWORD: "test"
+      STATISTICS_SERVICE_PASSWORD: "test"
+    image: sqshq/piggymetrics-statistics-service:latest
+    
+
+  statistics-mongodb:
+    environment:
+      MONGODB_PASSWORD: "test"
+    image: sqshq/piggymetrics-mongodb:latest
+    
+
+  notification-service:
+    environment:
+      CONFIG_SERVICE_PASSWORD: "test"
+      MONGODB_PASSWORD: "test"
+      NOTIFICATION_SERVICE_PASSWORD: "test"
+    image: sqshq/piggymetrics-notification-service:latest
+    
+
+  notification-mongodb:
+    image: sqshq/piggymetrics-mongodb:latest
+    
+    environment:
+      MONGODB_PASSWORD: "test"
+
+  monitoring:
+    environment:
+      CONFIG_SERVICE_PASSWORD: "test"
+    image: sqshq/piggymetrics-monitoring:latest
+    
+    ports:
+      - 9000:8080
+      - 8989:8989
