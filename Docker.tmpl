@@ -112,7 +112,21 @@
                 "description": "Define how the swarm resources should be named."
             }, 
             "type": "string"
-        }, 
+        },
+	"OMSWorkSpaceId": {
+		    "type": "string",
+		    "defaultValue": "",
+		    "metadata": {
+			"description": "(Optional- Keep Blank if not used)The Workspace ID for the OMS Portal Workspace."
+		    }
+		},
+	"OMSWorkSpaceKey": {
+		    "type": "securestring",
+		    "defaultValue": "",
+		    "metadata": {
+			"description": "(Optional- Keep Blank if not used) The OMS Portal Workspace key"
+		    }
+		},
         "workerCount": {
             "allowedValues": [
                 1, 
@@ -620,11 +634,13 @@
         "accountID": "[subscription().subscriptionId]", 
         "adServicePrincipalAppID": "[parameters('adServicePrincipalAppID')]", 
         "adServicePrincipalAppSecret": "[parameters('adServicePrincipalAppSecret')]", 
+        "omswsID": "[parameters('OMSWorkSpaceId')]",
+        "omswsKey": "[parameters('OMSWorkSpaceKey')]",
         "adServicePrincipalTenantID": "[subscription().tenantId]", 
         "adminUsername": "docker", 
         "apiVersion": "2016-03-30", 
         "basePrefix": "[parameters('swarmName')]", 
-        "customData": "[concat('export ACCOUNT_ID=\"', variables('accountID'), '\"', '\n', 'export REGION=\"', variables('storageLocation'), '\"', '\n', 'export SUB_ID=\"', variables('accountID'), '\"', '\n', 'export GROUP_NAME=\"', variables('groupName'), '\"', '\n', 'export LB_NAME=\"', variables('lbName'), '\"', '\n', 'export APP_ID=\"', variables('adServicePrincipalAppID'), '\"', '\n', 'export APP_SECRET=\"', variables('adServicePrincipalAppSecret'), '\"', '\n', 'export TENANT_ID=\"', variables('adServicePrincipalTenantID'), '\"', '\n', 'export SWARM_INFO_STORAGE_ACCOUNT=\"', variables('swarmInfoStorageAccount'), '\"', '\n', 'export SWARM_LOGS_STORAGE_ACCOUNT=\"', variables('swarmLogsStorageAccount'), '\"', '\n', 'export PRIVATE_IP=$(ifconfig eth0 | grep \"inet addr:\" | cut -d: -f2 | cut -d\" \" -f1)\n', 'export AZURE_HOSTNAME=$(hostname)\n', '\n', 'docker run --label com.docker.editions.system --log-driver=json-file --restart=no -it -e LB_NAME -e SUB_ID -e ROLE -e REGION -e TENANT_ID -e APP_ID -e APP_SECRET -e ACCOUNT_ID -e GROUP_NAME -e PRIVATE_IP -e DOCKER_FOR_IAAS_VERSION -e SWARM_INFO_STORAGE_ACCOUNT -e SWARM_LOGS_STORAGE_ACCOUNT -e AZURE_HOSTNAME -v /var/run/docker.sock:/var/run/docker.sock -v /usr/bin/docker:/usr/bin/docker -v /var/lib/docker:/var/lib/docker -v /var/log:/var/log docker4x/init-azure:\"$DOCKER_FOR_IAAS_VERSION\"\n')]", 
+        "customData": "[concat('export ACCOUNT_ID=\"', variables('accountID'), '\"', '\n', 'export REGION=\"', variables('storageLocation'), '\"', '\n', 'export SUB_ID=\"', variables('accountID'), '\"', '\n', 'export GROUP_NAME=\"', variables('groupName'), '\"', '\n', 'export LB_NAME=\"', variables('lbName'), '\"', '\n', 'export APP_ID=\"', variables('adServicePrincipalAppID'), '\"', '\n', 'export APP_SECRET=\"', variables('adServicePrincipalAppSecret'), '\"', '\n', 'export TENANT_ID=\"', variables('adServicePrincipalTenantID'), '\"', '\n', 'export SWARM_INFO_STORAGE_ACCOUNT=\"', variables('swarmInfoStorageAccount'), '\"', '\n', 'export OMS_WORKSPACE_ID=\"', variables('omswsID'), '\"', '\n', 'export OMS_WORKSPACE_KEY=\"', variables('omswsKey'), '\"', '\n', 'export SWARM_LOGS_STORAGE_ACCOUNT=\"', variables('swarmLogsStorageAccount'), '\"', '\n', 'export PRIVATE_IP=$(ifconfig eth0 | grep \"inet addr:\" | cut -d: -f2 | cut -d\" \" -f1)\n', 'export AZURE_HOSTNAME=$(hostname)\n', '\n', 'docker run --label com.docker.editions.system --log-driver=json-file --restart=no -it -e LB_NAME -e SUB_ID -e ROLE -e REGION -e TENANT_ID -e APP_ID -e APP_SECRET -e ACCOUNT_ID -e GROUP_NAME -e PRIVATE_IP -e DOCKER_FOR_IAAS_VERSION -e SWARM_INFO_STORAGE_ACCOUNT -e SWARM_LOGS_STORAGE_ACCOUNT -e AZURE_HOSTNAME -v /var/run/docker.sock:/var/run/docker.sock -v /usr/bin/docker:/usr/bin/docker -v /var/lib/docker:/var/lib/docker -v /var/log:/var/log docker4x/init-azure:\"$DOCKER_FOR_IAAS_VERSION\"\n', '\n', 'docker run --privileged -d -v /var/run/docker.sock:/var/run/docker.sock -e WSID=\"$OMS_WORKSPACE_ID\" -e KEY=\"$OMS_WORKSPACE_KEY\" -p 127.0.0.1:25225:25225 --name="omsagent" -h=`hostname` --restart=always microsoft/oms\n')]",
         "groupName": "[resourceGroup().name]", 
         "imageOffer": "docker4azure", 
         "imagePublisher": "docker", 
