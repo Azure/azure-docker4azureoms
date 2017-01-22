@@ -15,7 +15,8 @@ Table of Contents
    * [Docker for Azure with OMS](#azure-docker4azureoms)
       * [Deploy and Visualize](#deploy-and-visualize)
       * [Tips](#tips)
-      *  [Samples](#samples)
+      * [Samples](#samples)
+      * [Simplest Topology Specs](#simplest-topology-specs)
       * [Reporting Bugs](#reporting-bugs)
       * [Patches and pull requests](#patches-and-pull-requests)
       * [Usage of Operational Management Suite](#usage-of-operational-management-suite)
@@ -55,6 +56,10 @@ Table of Contents
 *  PiggyMetrics Sprint Boot Service: http://Docker4AzureRGExternalLoadBalance:8081/ 
 *  Hystrix: http://Docker4AzureRGExternalLoadBalance:9000/hystrix
 
+#### Simplest Topology Specs
+The Simplest topology spec of 1 Manager and 2 worker nodes is as follows for [Docker for Azure v 1.13.0-1](https://docs.docker.com/docker-for-azure/release-notes/)
+
+![Docker for Azure v 1.13.0-1 simplest](https://raw.githubusercontent.com/Azure/azure-docker4azureoms/master/Docker4AzurebyRancher.png)
 
 #### Reporting bugs
 
