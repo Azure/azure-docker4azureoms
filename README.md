@@ -14,8 +14,8 @@ Please report bugs  by opening an issue in the [GitHub Issue Tracker](https://gi
 
 Patches can be submitted as GitHub pull requests. If using GitHub please make sure your branch applies to the current master as a 'fast forward' merge (i.e. without creating a merge commit). Use the `git rebase` command to update your branch to the current master if necessary.
 
-#### ~~Pre-Req and or~~ Optional Usage of Operational Management Suite
-**OMS Setup is optional and the OMS Workspace Id and OMS Workspace Key can either be kept blank or populated post the steps below.**
+#### Usage of Operational Management Suite
+**OMS Setup is via the OMS Workspace Id and OMS Workspace Key as per the steps below.**
 
 [Create a free account for MS Azure Operational Management Suite with workspaceName](https://login.mms.microsoft.com/signin.aspx?signUp=on&ref=ms_mms)
 
