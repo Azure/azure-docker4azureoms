@@ -114,16 +114,16 @@
             "type": "string"
         },
 	"OMSWorkSpaceId": {
-		    "type": "string",
 		    "metadata": {
 			"description": "(Mandatory)The Workspace ID for the OMS Portal Workspace."
-		    }
+		    },
+	            "type": "string"
 		},
 	"OMSWorkSpaceKey": {
-		    "type": "securestring",
 		    "metadata": {
 			"description": "(Mandatory) The OMS Portal Workspace key"
-		    }
+		    },
+		    "type": "securestring"
 		},
         "workerCount": {
             "allowedValues": [
