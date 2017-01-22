@@ -104,7 +104,7 @@
             "metadata": {
                 "description": "The SSH public key used to authenticate with the created swarm. Usually available in $HOME/.ssh/id_rsa.pub file"
             }, 
-            "type": "string"
+            "type": "securestring"
         }, 
         "swarmName": {
             "defaultValue": "dockerswarm", 
@@ -115,16 +115,14 @@
         },
 	"OMSWorkSpaceId": {
 		    "type": "string",
-		    "defaultValue": "",
 		    "metadata": {
-			"description": "(Optional- Keep Blank if not used)The Workspace ID for the OMS Portal Workspace."
+			"description": "(Mandatory)The Workspace ID for the OMS Portal Workspace."
 		    }
 		},
 	"OMSWorkSpaceKey": {
 		    "type": "securestring",
-		    "defaultValue": "",
 		    "metadata": {
-			"description": "(Optional- Keep Blank if not used) The OMS Portal Workspace key"
+			"description": "(Mandatory) The OMS Portal Workspace key"
 		    }
 		},
         "workerCount": {
