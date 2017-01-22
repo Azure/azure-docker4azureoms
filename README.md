@@ -18,11 +18,9 @@ This template has additions on top of [Template - Docker for Azure v 1.13.0-1](h
 <code>scp -P 50000 ~/.ssh/id_rsa ~/.ssh/id_rsa.pub docker@sshlbrip:/home/docker/.ssh</code>
 
 * For Deploying a stack in v3 docker-compose file
-
 <code>docker stack deploy -c --path to docker-compose.yml file-- --stackname-- </code>
 
 *  To update stack
-
 <code>docker stack up deploy -c --path to docker-compose.yml file-- --stackname--</code>
 
 #### Reporting bugs
