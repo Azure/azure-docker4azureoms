@@ -41,6 +41,19 @@ Table of Contents
 * To update stack: 
 <code>docker stack up deploy -c --path to docker-compose.yml file-- --stackname--</code>
 
+##### Samples
+* <code> wget  https://raw.githubusercontent.com/Azure/azure-docker4azureoms/master/docker-compose-ekv3.yml && docker stack deploy -c docker-compose-ekv3.yml elasticsearchkibana </code>
+
+*  ElasticSearch Service: http://Docker4AzureRGExternalLoadBalance:9200/ 
+*  Kibana Service: http://Docker4AzureRGExternalLoadBalance:5601/ 
+
+* <code> wget https://raw.githubusercontent.com/Azure/azure-docker4azureoms/master/docker-compose-piggymetricsv3.yml && docker stack deploy -c docker-compose-piggymetricsv3.yml piggymetrics </code>
+*  Rabbit MQ Service: http://Docker4AzureRGExternalLoadBalancer:15672/ 
+*  Eureka Service: http://Docker4AzureRGExternalLoadBalance:8761/ 
+*  Echo Test Service: http://Docker4AzureRGExternalLoadBalance:8989/ 
+*  PiggyMetrics Sprint Boot Service: http://Docker4AzureRGExternalLoadBalance:8081/ 
+*  Hystrix: http://Docker4AzureRGExternalLoadBalance:9000/hystrix
+
 #### Reporting bugs
 
 Please report bugs  by opening an issue in the [GitHub Issue Tracker](https://github.com/Azure/azure-docker4azureoms/issues)
