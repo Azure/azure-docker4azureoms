@@ -11,16 +11,16 @@ This template has additions on top of [Template - Docker for Azure v 1.13.0-1](h
 
 #### Tips
 
-* Post Deployment, one can ssh to the manager using the id_rsa.pub as mentioned during swarm creation
+* Post Deployment, one can ssh to the manager using the id_rsa.pub as mentioned during swarm creation: 
 <code>ssh docker@sshlbrip -p 50000</code>
 
-* Transfer the keys to the swarm manager to use it as a jumpbox to workers
+* Transfer the keys to the swarm manager to use it as a jumpbox to workers: 
 <code>scp -P 50000 ~/.ssh/id_rsa ~/.ssh/id_rsa.pub docker@sshlbrip:/home/docker/.ssh</code>
 
-* For Deploying a stack in v3 docker-compose file
+* For Deploying a stack in v3 docker-compose file: 
 <code>docker stack deploy -c --path to docker-compose.yml file-- --stackname-- </code>
 
-*  To update stack
+* To update stack: 
 <code>docker stack up deploy -c --path to docker-compose.yml file-- --stackname--</code>
 
 #### Reporting bugs
