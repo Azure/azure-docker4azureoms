@@ -27,7 +27,6 @@ Table of Contents
 
 [Docker for Azure Release Notes](https://docs.docker.com/docker-for-azure/release-notes/). This template has additions on top of [Template - Docker for Azure v 1.13.0-1](https://download.docker.com/azure/stable/Docker.tmpl)
 
-
 #### Tips
 
 * Post Deployment, one can ssh to the manager using the id_rsa.pub as mentioned during swarm creation: 
