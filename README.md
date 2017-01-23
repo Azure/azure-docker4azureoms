@@ -17,6 +17,7 @@ Table of Contents
       * [Tips](#tips)
       * [Samples](#samples)
       * [Simplest Topology Specs](#simplest-topology-specs)
+      *  [Raft HA](#raft-ha)
       * [Reporting Bugs](#reporting-bugs)
       * [Patches and pull requests](#patches-and-pull-requests)
       * [Usage of Operational Management Suite](#usage-of-operational-management-suite)
@@ -63,8 +64,9 @@ Table of Contents
 
 #### Simplest Topology Specs
 The Simplest topology spec of 1 Manager and 2 worker nodes is as follows for [Docker for Azure v 1.13.0-1](https://docs.docker.com/docker-for-azure/release-notes/)
-
-![Docker for Azure v 1.13.0-1 simplest](https://raw.githubusercontent.com/Azure/azure-docker4azureoms/master/Docker4AzurebyRancher.png)
+##### Raft HA
+The consensus algorithm must ensure that if any state machine applies set x to 3 as the nth command, no other state machine will ever apply a different nth command. Raftscope as below for 5 Swarm Managers.
+![Raft HA](https://raw.githubusercontent.com/Azure/azure-docker4azureoms/master/raft.gif)
 
 #### Reporting bugs
 
