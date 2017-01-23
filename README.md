@@ -26,8 +26,9 @@ Table of Contents
 #### Prerequisites
 
 * [Containerized helper-script to help create the Service Principal](https://docs.docker.com/docker-for-azure/#service-principal)
- * Obtain App ID
- * Obtain App Secret
+ * <code> docker run -ti docker4x/create-sp-azure --spname-- </code>
+  * Obtain App ID
+  * Obtain App Secret
 * [Obtain Workspace ID and Key for OMS Solutions](https://github.com/Azure/azure-docker4azureoms/blob/master/README.md#usage-of-operational-management-suite)
  * Deploy the above mentioned solutions.
  * Obtain OMS Workspace ID
