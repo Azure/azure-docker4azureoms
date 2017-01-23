@@ -56,7 +56,7 @@ Table of Contents
 *  PiggyMetrics Sprint Boot Service: http://Docker4AzureRGExternalLoadBalance:8081/ 
 *  Hystrix: http://Docker4AzureRGExternalLoadBalance:9000/hystrix
 
-<code>wget https://raw.githubusercontent.com/docker/example-voting-app/master/docker-stack.yml && docker stack deploy -c docker-stack.yml votingapp</code>
+<code>wget https://raw.githubusercontent.com/Azure/azure-docker4azureoms/master/docker-compose-votingappv3.yml && docker stack deploy -c docker-compose-votingappv3.yml votingapp</code>
 
 #### Simplest Topology Specs
 The Simplest topology spec of 1 Manager and 2 worker nodes is as follows for [Docker for Azure v 1.13.0-1](https://docs.docker.com/docker-for-azure/release-notes/)
