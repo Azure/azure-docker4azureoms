@@ -13,6 +13,7 @@ Table of Contents
 =================
 
    * [Docker for Azure with OMS](#azure-docker4azureoms)
+      * [Prerequisites](#prerequisites)
       * [Deploy and Visualize](#deploy-and-visualize)
       * [Tips](#tips)
       * [Samples](#samples)
@@ -22,6 +23,10 @@ Table of Contents
       * [Patches and pull requests](#patches-and-pull-requests)
       * [Usage of Operational Management Suite](#usage-of-operational-management-suite)
          
+#### Prerequisites
+
+[Containerized helper-script to help create the Service Principal](https://docs.docker.com/docker-for-azure/#service-principal)
+
 #### Deploy and Visualize
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/http%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-docker4azureoms%2Fmaster%2Fazuredeploy.json" target="_blank"><img alt="Deploy to Azure" src="http://azuredeploy.net/deploybutton.png" /></a>
 
