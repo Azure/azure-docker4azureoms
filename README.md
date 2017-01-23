@@ -50,7 +50,7 @@ Table of Contents
 
 <code> wget https://raw.githubusercontent.com/Azure/azure-docker4azureoms/master/docker-compose-piggymetricsv3.yml && docker stack deploy -c docker-compose-piggymetricsv3.yml piggymetrics </code>
 
-*  Rabbit MQ Service: http://Docker4AzureRGExternalLoadBalancer:15672/ 
+*  Rabbit MQ Service: http://Docker4AzureRGExternalLoadBalancer:15672/ (guest/guest)
 *  Eureka Service: http://Docker4AzureRGExternalLoadBalance:8761/ 
 *  Echo Test Service: http://Docker4AzureRGExternalLoadBalance:8989/ 
 *  PiggyMetrics Sprint Boot Service: http://Docker4AzureRGExternalLoadBalance:8081/ 
