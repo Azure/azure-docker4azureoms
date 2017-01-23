@@ -25,7 +25,13 @@ Table of Contents
          
 #### Prerequisites
 
-[Containerized helper-script to help create the Service Principal](https://docs.docker.com/docker-for-azure/#service-principal)
+* [Containerized helper-script to help create the Service Principal](https://docs.docker.com/docker-for-azure/#service-principal)
+ * Obtain App ID
+ * Obtain App Secret
+* [Obtain Workspace ID and Key for OMS Solutions](https://github.com/Azure/azure-docker4azureoms/blob/master/README.md#usage-of-operational-management-suite)
+ * Deploy the above mentioned solutions.
+ * Obtain OMS Workspace ID
+ * Obtain Workspace Key
 
 #### Deploy and Visualize
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/http%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-docker4azureoms%2Fmaster%2Fazuredeploy.json" target="_blank"><img alt="Deploy to Azure" src="http://azuredeploy.net/deploybutton.png" /></a>
