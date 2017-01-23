@@ -58,6 +58,9 @@ Table of Contents
 
 <code>wget https://raw.githubusercontent.com/Azure/azure-docker4azureoms/master/docker-compose-votingappv3.yml && docker stack deploy -c docker-compose-votingappv3.yml votingapp</code>
 
+*  Vote: http://Docker4AzureRGExternalLoadBalance:5000/ 
+*  Voting Results: http://Docker4AzureRGExternalLoadBalance:5001
+
 #### Simplest Topology Specs
 The Simplest topology spec of 1 Manager and 2 worker nodes is as follows for [Docker for Azure v 1.13.0-1](https://docs.docker.com/docker-for-azure/release-notes/)
 
