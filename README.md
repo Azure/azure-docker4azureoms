@@ -1,7 +1,7 @@
 ---
 title: Deploy Docker for Azure with OMS
 
-description: Learn how to deploy Docker for Azure with one click along with Operational Management Suite Container monitoring, using an ARM (ARM Resource Manager) Template and deploy service stacks
+description: Learn how to deploy Docker for Azure with one click along with Operational Management Suite Container monitoring, using an ARM (Azure Resource Manager) Template and deploy service stacks
 
 keywords: docker, docker for azure , install, orchestration, management, azure, swarm, OMS, monitoring
 ---
@@ -55,6 +55,8 @@ Table of Contents
 *  Echo Test Service: http://Docker4AzureRGExternalLoadBalance:8989/ 
 *  PiggyMetrics Sprint Boot Service: http://Docker4AzureRGExternalLoadBalance:8081/ 
 *  Hystrix: http://Docker4AzureRGExternalLoadBalance:9000/hystrix
+
+<code> wget https://raw.githubusercontent.com/docker/example-voting-app/master/docker-stack.yml && ocker stack deploy -c docker-stack.yml votingapp </code>
 
 #### Simplest Topology Specs
 The Simplest topology spec of 1 Manager and 2 worker nodes is as follows for [Docker for Azure v 1.13.0-1](https://docs.docker.com/docker-for-azure/release-notes/)
