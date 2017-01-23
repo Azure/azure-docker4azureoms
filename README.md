@@ -17,7 +17,7 @@ Table of Contents
       * [Tips](#tips)
       * [Samples](#samples)
       * [Simplest Topology Specs](#simplest-topology-specs)
-      *  [Raft HA](#raft-ha)
+            * [Raft HA](#raft-ha)
       * [Reporting Bugs](#reporting-bugs)
       * [Patches and pull requests](#patches-and-pull-requests)
       * [Usage of Operational Management Suite](#usage-of-operational-management-suite)
