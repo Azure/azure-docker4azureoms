@@ -1,7 +1,7 @@
 ---
 title: Deploy Docker for Azure with OMS
 
-description: Learn how to deploy Docker for Azure with one click along with Operational Management Suite Container monitoring, using an ARM (Azure Resource Manager) Template and deploy service stacks
+description: Learn how to deploy Docker for Azure with one click along with Operational Management Suite Container monitoring, using an ARM (Azure Resource Manager) Template and deploy service stacks.
 
 keywords: docker, docker for azure , install, orchestration, management, azure, swarm, OMS, monitoring
 ---
