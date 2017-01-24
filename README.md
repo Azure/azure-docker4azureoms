@@ -18,6 +18,7 @@ Table of Contents
       * [Tips](#tips)
       * [Samples](#samples)
       * [Simplest Topology Specs](#simplest-topology-specs)
+       * [Multi Manager with autoscaled worker](#multi-manager-with-autoscaled-worker)
        * [Raft HA](#raft-ha)
       * [Reporting Bugs](#reporting-bugs)
       * [Patches and pull requests](#patches-and-pull-requests)
