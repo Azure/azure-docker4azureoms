@@ -73,12 +73,17 @@ Table of Contents
 
 *  Vote: http://Docker4AzureRGExternalLoadBalance:5002/ 
 *  Voting Results: http://Docker4AzureRGExternalLoadBalance:5003
-*  Manomarks'Swarm Visualizer: http://Docker4AzureRGExternalLoadBalance:8083
+*  @manomarks Swarm Visualizer: http://Docker4AzureRGExternalLoadBalance:8083
 
 #### Simplest Topology Specs
 The Simplest topology spec of 1 Manager and 2 worker nodes is as follows for [Docker for Azure v 1.13.0-1](https://docs.docker.com/docker-for-azure/release-notes/)
 
 ![Simplest Topology](https://raw.githubusercontent.com/Azure/azure-docker4azureoms/master/Docker4AzurebyRancher.png)
+
+##### Multi Manager with autoscaled worker
+3 Swarm Managers with Autoscaled 4th Worker as below: 
+
+![3 Swarm Managers with Autoscaled 4th Worker](https://raw.githubusercontent.com/Azure/azure-docker4azureoms/master/Docker4AzurebyRancherAutoScale.png)
 
 ##### Raft HA
 The consensus algorithm must ensure that if any state machine applies set x to 3 as the nth command, no other state machine will ever apply a different nth command. Raftscope as below for 5 Swarm Managers.
@@ -104,3 +109,6 @@ Patches can be submitted as GitHub pull requests. If using GitHub please make su
 * Add The solutions "Agent Health", "Activity Log Analytics" and "Container" Solutions from the "Solutions Gallery" of the OMS Portal of the workspace.
 * While Deploying the Docker for Azure Template just the WorkspaceID and the Key are to be mentioned and all will be registered including all containers in any nodes of the Docker for Azure auto cluster.
 * Then one can login to https://OMSWorkspaceName.portal.mms.microsoft.com/#Workspace/overview/solutions/details/index?solutionId=Containers and check all containers running for Docker for Azure and use Log Analytics and if Required perform automated backups of the APK Based sys using the corresponding Solutions for OMS.
+* OMS Monitoring 3 Swarm Managers with 4 workers and all their containers.
+
+![OMS Docker 4 Azure](https://raw.githubusercontent.com/Azure/azure-docker4azureoms/master/OMSDocker4Azure.png)
