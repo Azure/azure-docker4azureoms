@@ -22,7 +22,7 @@ Table of Contents
        * [Raft HA](#raft-ha)
       * [Reporting Bugs](#reporting-bugs)
       * [Patches and pull requests](#patches-and-pull-requests)
-      * [Usage of Operational Management Suite](#usage-of-operational-management-suite)
+d      * [Usage of Operational Management Suite](#usage-of-operational-management-suite)
          
 #### Prerequisites
 
@@ -62,6 +62,7 @@ Table of Contents
 *  ElasticSearch Service: http://Docker4AzureRGExternalLoadBalance:9200/ 
 *  Kibana Service: http://Docker4AzureRGExternalLoadBalance:5601/ 
 
+Originally cloned from https://github.com/sqshq/PiggyMetrics, this example demonstrates the use of Netlix OSS API with Spring. The docker-compose file has been updated to make use of tha latest features of Compose 3.0
 <code> wget https://raw.githubusercontent.com/Azure/azure-docker4azureoms/master/docker-compose-piggymetricsv3.yml && docker stack deploy -c docker-compose-piggymetricsv3.yml piggymetrics </code>
 
 *  Rabbit MQ Service: http://Docker4AzureRGExternalLoadBalancer:15672/ (guest/guest)
