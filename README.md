@@ -17,6 +17,7 @@ Table of Contents
       * [Deploy and Visualize](#deploy-and-visualize)
       * [Tips](#tips)
       * [Samples](#samples)
+       * [Spring Boot](#spring-boot)
       * [Simplest Topology Specs](#simplest-topology-specs)
        * [Multi Manager with autoscaled worker](#multi-manager-with-autoscaled-worker)
        * [Raft HA](#raft-ha)
