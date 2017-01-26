@@ -16,14 +16,14 @@ Table of Contents
       * [Prerequisites](#prerequisites)
       * [Deploy and Visualize](#deploy-and-visualize)
       * [Tips](#tips)
-      * [Samples](#samples)
-       * [Spring Boot](#spring-boot)
+      * [Some Samples](#some-samples)
+      * [Spring Boot Samples](#spring-boot-samples)
       * [Simplest Topology Specs](#simplest-topology-specs)
        * [Multi Manager with autoscaled worker](#multi-manager-with-autoscaled-worker)
        * [Raft HA](#raft-ha)
       * [Reporting Bugs](#reporting-bugs)
       * [Patches and pull requests](#patches-and-pull-requests)
-d      * [Usage of Operational Management Suite](#usage-of-operational-management-suite)
+      * [Usage of Operational Management Suite](#usage-of-operational-management-suite)
          
 #### Prerequisites
 
@@ -57,12 +57,18 @@ d      * [Usage of Operational Management Suite](#usage-of-operational-managemen
 * To update stack: 
 <code>docker stack up deploy -c --path to docker-compose.yml file-- --stackname--</code>
 
-#### Samples
+#### Some Samples
 <code> wget  https://raw.githubusercontent.com/Azure/azure-docker4azureoms/master/docker-compose-ekv3.yml && docker stack deploy -c docker-compose-ekv3.yml elasticsearchkibana </code>
 
 *  ElasticSearch Service: http://Docker4AzureRGExternalLoadBalance:9200/ 
-*  Kibana Service: http://Docker4AzureRGExternalLoadBalance:5601/ 
-##### Spring Boot 
+*  Kibana Service: http://Docker4AzureRGExternalLoadBalance:5601/ \
+
+<code>wget https://raw.githubusercontent.com/Azure/azure-docker4azureoms/master/docker-compose-votingappv3.yml && docker stack deploy -c docker-compose-votingappv3.yml votingapp</code>
+
+*  Vote: http://Docker4AzureRGExternalLoadBalance:5002/ 
+*  Voting Results: http://Docker4AzureRGExternalLoadBalance:5003
+*  @manomarks Swarm Visualizer: http://Docker4AzureRGExternalLoadBalance:8083
+#### Spring Boot Samples
 Originally cloned from https://github.com/sqshq/PiggyMetrics, this example demonstrates the use of Netlix OSS API with Spring. The docker-compose file has been updated to make use of tha latest features of Compose 3.0. The service container logs are drained into OMS.
 
 <code> wget https://raw.githubusercontent.com/Azure/azure-docker4azureoms/master/docker-compose-piggymetricsv3.yml && docker stack deploy -c docker-compose-piggymetricsv3.yml piggymetrics </code>
@@ -72,12 +78,6 @@ Originally cloned from https://github.com/sqshq/PiggyMetrics, this example demon
 *  Echo Test Service: http://Docker4AzureRGExternalLoadBalance:8989/ 
 *  PiggyMetrics Sprint Boot Service: http://Docker4AzureRGExternalLoadBalance:8081/ 
 *  Hystrix: http://Docker4AzureRGExternalLoadBalance:9000/hystrix
-
-<code>wget https://raw.githubusercontent.com/Azure/azure-docker4azureoms/master/docker-compose-votingappv3.yml && docker stack deploy -c docker-compose-votingappv3.yml votingapp</code>
-
-*  Vote: http://Docker4AzureRGExternalLoadBalance:5002/ 
-*  Voting Results: http://Docker4AzureRGExternalLoadBalance:5003
-*  @manomarks Swarm Visualizer: http://Docker4AzureRGExternalLoadBalance:8083
 
 #### Simplest Topology Specs
 The Simplest topology spec of 1 Manager and 2 worker nodes is as follows for [Docker for Azure v 1.13.0-1](https://docs.docker.com/docker-for-azure/release-notes/)
