@@ -45,7 +45,7 @@ d      * [Usage of Operational Management Suite](#usage-of-operational-managemen
 #### Tips
 
 * Post Deployment, one can ssh to the manager using the id_rsa.pub as mentioned during swarm creation: 
-<code>ssh docker@sshlbrip -p 50000</code>
+ <code>ssh docker@sshlbrip -p 50000</code>
 
 * Transfer the keys to the swarm manager to use it as a jumpbox to workers: 
 <code>scp -P 50000 ~/.ssh/id_rsa ~/.ssh/id_rsa.pub docker@sshlbrip:/home/docker/.ssh</code>
@@ -62,7 +62,8 @@ d      * [Usage of Operational Management Suite](#usage-of-operational-managemen
 *  ElasticSearch Service: http://Docker4AzureRGExternalLoadBalance:9200/ 
 *  Kibana Service: http://Docker4AzureRGExternalLoadBalance:5601/ 
 
-Originally cloned from https://github.com/sqshq/PiggyMetrics, this example demonstrates the use of Netlix OSS API with Spring. The docker-compose file has been updated to make use of tha latest features of Compose 3.0
+Originally cloned from https://github.com/sqshq/PiggyMetrics, this example demonstrates the use of Netlix OSS API with Spring. The docker-compose file has been updated to make use of tha latest features of Compose 3.0. The service container logs are drained into OMS.
+
 <code> wget https://raw.githubusercontent.com/Azure/azure-docker4azureoms/master/docker-compose-piggymetricsv3.yml && docker stack deploy -c docker-compose-piggymetricsv3.yml piggymetrics </code>
 
 *  Rabbit MQ Service: http://Docker4AzureRGExternalLoadBalancer:15672/ (guest/guest)
