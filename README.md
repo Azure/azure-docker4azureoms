@@ -61,7 +61,7 @@ d      * [Usage of Operational Management Suite](#usage-of-operational-managemen
 
 *  ElasticSearch Service: http://Docker4AzureRGExternalLoadBalance:9200/ 
 *  Kibana Service: http://Docker4AzureRGExternalLoadBalance:5601/ 
-
+##### Spring Boot 
 Originally cloned from https://github.com/sqshq/PiggyMetrics, this example demonstrates the use of Netlix OSS API with Spring. The docker-compose file has been updated to make use of tha latest features of Compose 3.0. The service container logs are drained into OMS.
 
 <code> wget https://raw.githubusercontent.com/Azure/azure-docker4azureoms/master/docker-compose-piggymetricsv3.yml && docker stack deploy -c docker-compose-piggymetricsv3.yml piggymetrics </code>
