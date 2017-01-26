@@ -68,6 +68,7 @@ Table of Contents
 *  Vote: http://Docker4AzureRGExternalLoadBalance:5002/ 
 *  Voting Results: http://Docker4AzureRGExternalLoadBalance:5003
 *  @manomarks Swarm Visualizer: http://Docker4AzureRGExternalLoadBalance:8083
+
 #### Spring Boot Samples
 Originally cloned from https://github.com/sqshq/PiggyMetrics, this example demonstrates the use of Netlix OSS API with Spring. The docker-compose file has been updated to make use of tha latest features of Compose 3.0. The service container logs are drained into OMS.
 
