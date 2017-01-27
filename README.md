@@ -18,6 +18,7 @@ Table of Contents
       * [Tips](#tips)
       * [Some Samples](#some-samples)
       * [Spring Cloud Netflix Samples](#spring-cloud-netflix-samples)
+       * [Monitor dashboard](#monitor-dashboard)
       * [Simplest Topology Specs](#simplest-topology-specs)
        * [Multi Manager with autoscaled worker](#multi-manager-with-autoscaled-worker)
        * [Raft HA](#raft-ha)
@@ -81,7 +82,7 @@ Forked from https://github.com/sqshq/PiggyMetrics, this example demonstrates the
 *  PiggyMetrics Sprint Boot Service: http://Docker4AzureRGExternalLoadBalance:8081/ 
 *  Hystrix: http://Docker4AzureRGExternalLoadBalance:9000/hystrix
 
-#### Monitor dashboard
+##### Monitor dashboard
 
 In this project configuration, each microservice with Hystrix on board pushes metrics to Turbine via Spring Cloud Bus (with AMQP broker). The Monitoring project is just a small Spring boot application with [Turbine](https://github.com/Netflix/Turbine) and [Hystrix Dashboard](https://github.com/Netflix/Hystrix/tree/master/hystrix-dashboard).
 
