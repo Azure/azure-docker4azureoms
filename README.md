@@ -71,7 +71,7 @@ e* For Deploying a stack in v3 docker-compose file:
 *  Voting Results: http://Docker4AzureRGExternalLoadBalance:5003
 *  @manomarks Swarm Visualizer: http://Docker4AzureRGExternalLoadBalance:8083
 
-#### Spring Cloud Netlix Samples
+#### Spring Cloud Netflix Samples
 Forked from https://github.com/sqshq/PiggyMetrics, this example demonstrates the use of Netlix OSS API with Spring. The docker-compose file has been updated to make use of the latest features of Compose 3.0; it's still a work in progress. The service container logs are drained into OMS.
 
 <code> wget https://raw.githubusercontent.com/Azure/azure-docker4azureoms/master/docker-compose-piggymetricsv3.yml && docker stack deploy -c docker-compose-piggymetricsv3.yml piggymetrics </code>
