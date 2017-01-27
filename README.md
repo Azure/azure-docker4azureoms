@@ -17,7 +17,7 @@ Table of Contents
       * [Deploy and Visualize](#deploy-and-visualize)
       * [Tips](#tips)
       * [Some Samples](#some-samples)
-      * [Spring Boot Samples](#spring-boot-samples)
+      * [Spring Cloud Netflix Samples](#spring-cloud-netflix-samples)
       * [Simplest Topology Specs](#simplest-topology-specs)
        * [Multi Manager with autoscaled worker](#multi-manager-with-autoscaled-worker)
        * [Raft HA](#raft-ha)
@@ -48,10 +48,11 @@ Table of Contents
 * Post Deployment, one can ssh to the manager using the id_rsa.pub as mentioned during swarm creation: 
  <code>ssh docker@sshlbrip -p 50000</code>
 
+
 * Transfer the keys to the swarm manager to use it as a jumpbox to workers: 
 <code>scp -P 50000 ~/.ssh/id_rsa ~/.ssh/id_rsa.pub docker@sshlbrip:/home/docker/.ssh</code>
 
-* For Deploying a stack in v3 docker-compose file: 
+e* For Deploying a stack in v3 docker-compose file: 
 <code>docker stack deploy -c --path to docker-compose.yml file-- --stackname-- </code>
 
 * To update stack: 
@@ -69,8 +70,8 @@ Table of Contents
 *  Voting Results: http://Docker4AzureRGExternalLoadBalance:5003
 *  @manomarks Swarm Visualizer: http://Docker4AzureRGExternalLoadBalance:8083
 
-#### Spring Boot Samples
-Originally cloned from https://github.com/sqshq/PiggyMetrics, this example demonstrates the use of Netlix OSS API with Spring. The docker-compose file has been updated to make use of tha latest features of Compose 3.0. The service container logs are drained into OMS.
+#### Spring Cloud Netlix Samples
+Originally cloned from https://github.com/sqshq/PiggyMetrics, this example demonstrates the use of Netlix OSS API with Spring. The docker-compose file has been updated to make use of the latest features of Compose 3.0. The service container logs are drained into OMS.
 
 <code> wget https://raw.githubusercontent.com/Azure/azure-docker4azureoms/master/docker-compose-piggymetricsv3.yml && docker stack deploy -c docker-compose-piggymetricsv3.yml piggymetrics </code>
 
@@ -79,6 +80,21 @@ Originally cloned from https://github.com/sqshq/PiggyMetrics, this example demon
 *  Echo Test Service: http://Docker4AzureRGExternalLoadBalance:8989/ 
 *  PiggyMetrics Sprint Boot Service: http://Docker4AzureRGExternalLoadBalance:8081/ 
 *  Hystrix: http://Docker4AzureRGExternalLoadBalance:9000/hystrix
+
+### Monitor dashboard
+
+In this project configuration, each microservice with Hystrix on board pushes metrics to Turbine via Spring Cloud Bus (with AMQP broker). The Monitoring project is just a small Spring boot application with [Turbine](https://github.com/Netflix/Turbine) and [Hystrix Dashboard](https://github.com/Netflix/Hystrix/tree/master/hystrix-dashboard).
+
+See below [how to get it up and running](https://github.com/sqshq/PiggyMetrics#how-to-run-all-the-things).
+
+Let's see our system behavior under load: Account service calls Statistics service and it responses with a vary imitation delay. Response timeout threshold is set to 1 second.
+
+<img width="880" src="https://cloud.githubusercontent.com/assets/6069066/14194375/d9a2dd80-f7be-11e5-8bcc-9a2fce753cfe.png">
+
+<img width="212" src="https://cloud.githubusercontent.com/assets/6069066/14127349/21e90026-f628-11e5-83f1-60108cb33490.gif">	| <img width="212" src="https://cloud.githubusercontent.com/assets/6069066/14127348/21e6ed40-f628-11e5-9fa4-ed527bf35129.gif"> | <img width="212" src="https://cloud.githubusercontent.com/assets/6069066/14127346/21b9aaa6-f628-11e5-9bba-aaccab60fd69.gif"> | <img width="212" src="https://cloud.githubusercontent.com/assets/6069066/14127350/21eafe1c-f628-11e5-8ccd-a6b6873c046a.gif">
+--- |--- |--- |--- |
+| `0 ms delay` | `500 ms delay` | `800 ms delay` | `1100 ms delay`
+| Well behaving system. The throughput is about 22 requests/second. Small number of active threads in Statistics service. The median service time is about 50 ms. | The number of active threads is growing. We can see purple number of thread-pool rejections and therefore about 30-40% of errors, but circuit is still closed. | Half-open state: the ratio of failed commands is more than 50%, the circuit breaker kicks in. After sleep window amount of time, the next request is let through. | 100 percent of the requests fail. The circuit is now permanently open. Retry after sleep time won't close circuit again, because the single request is too slow.
 
 #### Simplest Topology Specs
 The Simplest topology spec of 1 Manager and 2 worker nodes is as follows for [Docker for Azure v 1.13.0-1](https://docs.docker.com/docker-for-azure/release-notes/)
