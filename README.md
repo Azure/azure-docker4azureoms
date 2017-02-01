@@ -44,6 +44,10 @@ Table of Contents
 
 [Docker for Azure Release Notes](https://docs.docker.com/docker-for-azure/release-notes/). This template has additions on top of [Template - Docker for Azure v 1.13.0-1](https://download.docker.com/azure/stable/Docker.tmpl)
 
+#### MSFT OSCC
+This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
+For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+
 #### Tips
 
 * Post Deployment, one can ssh to the manager using the id_rsa.pub as mentioned during swarm creation: 
