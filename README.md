@@ -26,6 +26,7 @@ Table of Contents
       * [Reporting Bugs](#reporting-bugs)
       * [Patches and pull requests](#patches-and-pull-requests)
       * [Usage of Operational Management Suite](#usage-of-operational-management-suite)
+      * [Scaling](#scaling)
          
 #### Prerequisites
 
@@ -137,3 +138,13 @@ Patches can be submitted as GitHub pull requests. If using GitHub please make su
 * OMS Monitoring 3 Swarm Managers with 4 workers and all their containers.
 
 ![OMS Docker 4 Azure](https://raw.githubusercontent.com/Azure/azure-docker4azureoms/master/OMSDocker4Azure.png)
+#### Scaling
+
+VMSS auto scale is by default off to be addressed in a [later version](https://forums.docker.com/t/autoscaling-azure-virtual-machine-scale-sets/26030/4)
+
+* For now manual scaling as per the pic below, and automatic OMS Registering of new workers in the swarm as in the pic last. (Manually added 2 new workers  as per the next below pic and hence 3 Managers + 3 Workers initilled deployed + 2 manually scaled worker nodes = Total 8).
+
+![Manual VMSS Scaling](https://cdn-enterprise.discourse.org/docker/uploads/default/original/2X/8/849dfcceb32f5c89eddfc90a58008c6bb17a0043.png)
+
+![OMS Auto Post Scaling](https://raw.githubusercontent.com/Azure/azure-docker4azureoms/master/ScaledWorkers.png)
+
