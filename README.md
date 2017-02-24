@@ -39,11 +39,11 @@ Table of Contents
  * Obtain Workspace Key
 
 #### Deploy and Visualize
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/http%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-docker4azureoms%2Fmaster%2Fazuredeploy.json" target="_blank"><img alt="Deploy to Azure" src="http://azuredeploy.net/deploybutton.png" /></a>
+<a href="https://preview.portal.azure.com/#create/Microsoft.Template/uri/http%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-docker4azureoms%2Fmaster%2Fazuredeploy.json" target="_blank"><img alt="Deploy to Azure" src="http://azuredeploy.net/deploybutton.png" /></a>
 
 <a href="http://armviz.io/#/?load=https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-docker4azureoms%2Fmaster%2Fazuredeploy.json" target="_blank">  <img src="http://armviz.io/visualizebutton.png" /> </a> 
 
-[Docker for Azure Release Notes](https://docs.docker.com/docker-for-azure/release-notes/). This template has additions on top of [Template - Docker for Azure v 1.13.0-1](https://download.docker.com/azure/stable/Docker.tmpl)
+[Docker for Azure Release Notes](https://docs.docker.com/docker-for-azure/release-notes/). This template has additions on top of [Template - Docker for Azure v1.13.1-2 (stable)](https://download.docker.com/azure/stable/Docker.tmpl)
 
 #### MSFT OSCC
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
