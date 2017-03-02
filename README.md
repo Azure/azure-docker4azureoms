@@ -107,7 +107,7 @@ The Simplest topology spec of 1 Manager and 2 worker nodes is as follows for [Do
 ![Simplest Topology](https://raw.githubusercontent.com/Azure/azure-docker4azureoms/master/Docker4AzurebyRancher.png)
 
 ##### Multi Manager with autoscaled worker
-3 Swarm Managers with Autoscaled 4th Worker as below: 
+3 Swarm Managers with Scaled 4th Worker as below : 
 
 ![3 Swarm Managers with Autoscaled 4th Worker](https://raw.githubusercontent.com/Azure/azure-docker4azureoms/master/Docker4AzurebyRancherAutoScale.png)
 
