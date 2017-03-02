@@ -87,6 +87,7 @@ Forked from https://github.com/sqshq/PiggyMetrics, this example demonstrates the
 *  Echo Test Service: http://Docker4AzureRGExternalLoadBalance:8989/ 
 *  PiggyMetrics Sprint Boot Service: http://Docker4AzureRGExternalLoadBalance:8081/ 
 *  Hystrix: http://Docker4AzureRGExternalLoadBalance:9000/hystrix
+  * Turbine Stream for Hystrix Dashboard: http://Docker4AzureRGExternalLoadBalance:8989/turbine/turbine.stream
 
 ##### Monitor dashboard
 
