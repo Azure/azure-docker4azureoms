@@ -59,7 +59,7 @@ For more information see the [Code of Conduct FAQ](https://opensource.microsoft.
 * Transfer the keys to the swarm manager to use it as a jumpbox to workers: 
 <code>scp -P 50000 ~/.ssh/id_rsa ~/.ssh/id_rsa.pub docker@sshlbrip:/home/docker/.ssh</code>
 
-e* For Deploying a stack in v3 docker-compose file: 
+* For Deploying a stack in v3 docker-compose file: 
 <code>docker stack deploy -c --path to docker-compose.yml file-- --stackname-- </code>
 
 * To update stack: 
