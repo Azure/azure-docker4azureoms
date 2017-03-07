@@ -265,93 +265,8 @@
     },
     {
       "apiVersion": "[variables('apiVersion')]",
-      "location": "[variables('storageLocation')]",
-      "name": "[variables('managerNSGName')]",
-      "properties": {
-        "securityRules": [
-          {
-            "name": "ssh",
-            "properties": {
-              "access": "Allow",
-              "description": "Allow SSH",
-              "destinationAddressPrefix": "*",
-              "destinationPortRange": "22",
-              "direction": "Inbound",
-              "priority": 201,
-              "protocol": "Tcp",
-              "sourceAddressPrefix": "*",
-              "sourcePortRange": "*"
-            }
-          },
-          {
-            "name": "swarm-listen-port",
-            "properties": {
-              "access": "Allow",
-              "description": "Allow 'swarm join' ingress to manager node",
-              "destinationAddressPrefix": "[variables('subnetPrefix')]",
-              "destinationPortRange": "2377",
-              "direction": "Inbound",
-              "priority": 202,
-              "protocol": "Tcp",
-              "sourceAddressPrefix": "[variables('subnetPrefix')]",
-              "sourcePortRange": "*"
-            }
-          },
-          {
-            "name": "vxlan",
-            "properties": {
-              "access": "Allow",
-              "description": "Allow VXLan connection between nodes",
-              "destinationAddressPrefix": "[variables('subnetPrefix')]",
-              "destinationPortRange": "4789",
-              "direction": "Inbound",
-              "priority": 203,
-              "protocol": "Udp",
-              "sourceAddressPrefix": "[variables('subnetPrefix')]",
-              "sourcePortRange": "*"
-            }
-          },
-          {
-            "name": "gossip",
-            "properties": {
-              "access": "Allow",
-              "description": "Serf communication to gossip between nodes",
-              "destinationAddressPrefix": "[variables('subnetPrefix')]",
-              "destinationPortRange": "7946",
-              "direction": "Inbound",
-              "priority": 204,
-              "protocol": "*",
-              "sourceAddressPrefix": "[variables('subnetPrefix')]",
-              "sourcePortRange": "*"
-            }
-          },
-          {
-            "name": "diagnostics",
-            "properties": {
-              "access": "Allow",
-              "description": "Allow communication for the diagnostics server",
-              "destinationAddressPrefix": "[variables('subnetPrefix')]",
-              "destinationPortRange": "44554",
-              "direction": "Inbound",
-              "priority": 205,
-              "protocol": "Tcp",
-              "sourceAddressPrefix": "[variables('subnetPrefix')]",
-              "sourcePortRange": "*"
-            }
-          }
-        ]
-      },
-      "tags": {
-        "channel": "[variables('channel')]",
-        "provider": "[toUpper(variables('DockerProviderTag'))]"
-      },
-      "type": "Microsoft.Network/networkSecurityGroups"
-    },
-    {
-      "apiVersion": "[variables('apiVersion')]",
       "dependsOn": [
         "[variables('vnetID')]",
-        "[variables('managerNSGID')]",
         "[variables('lbSSHID')]",
         "storageLoop"
       ],
@@ -400,9 +315,6 @@
                       }
                     }
                   ],
-                  "networkSecurityGroup": {
-                    "id": "[variables('managerNSGID')]"
-                  },
                   "primary": true
                 }
               }
@@ -668,21 +580,19 @@
     }
   ],
   "variables": {
-    "Description": "Docker for Azure 1.13.1 (1.13.1-ga-2)",
-    "DockerProviderTag": "8CF0E79C-DF97-4992-9B59-602DB544D354",
     "accountID": "[subscription().subscriptionId]",
+    "adminUsername": "docker",
     "adServicePrincipalAppID": "[parameters('adServicePrincipalAppID')]",
     "adServicePrincipalAppSecret": "[parameters('adServicePrincipalAppSecret')]",
-    "omswsID": "[parameters('OMSWorkSpaceId')]",
-    "omswsKey": "[parameters('OMSWorkSpaceKey')]",
     "adServicePrincipalTenantID": "[subscription().tenantId]",
-    "adminUsername": "docker",
     "apiVersion": "2016-03-30",
     "basePrefix": "[parameters('swarmName')]",
     "channel": "stable",
     "customData": "[concat('export ACCOUNT_ID=\"', variables('accountID'), '\"', '\n', 'export REGION=\"', variables('storageLocation'), '\"', '\n', 'export SUB_ID=\"', variables('accountID'), '\"', '\n', 'export GROUP_NAME=\"', variables('groupName'), '\"', '\n', 'export LB_NAME=\"', variables('lbName'), '\"', '\n', 'export APP_ID=\"', variables('adServicePrincipalAppID'), '\"', '\n', 'export APP_SECRET=\"', variables('adServicePrincipalAppSecret'), '\"', '\n', 'export TENANT_ID=\"', variables('adServicePrincipalTenantID'), '\"', '\n', 'export SWARM_INFO_STORAGE_ACCOUNT=\"', variables('swarmInfoStorageAccount'), '\"', '\n', 'export OMS_WORKSPACE_ID=\"', variables('omswsID'), '\"', '\n', 'export OMS_WORKSPACE_KEY=\"', variables('omswsKey'), '\"', '\n', 'export SWARM_LOGS_STORAGE_ACCOUNT=\"', variables('swarmLogsStorageAccount'), '\"', '\n', 'export PRIVATE_IP=$(ifconfig eth0 | grep \"inet addr:\" | cut -d: -f2 | cut -d\" \" -f1)\n', 'export AZURE_HOSTNAME=$(hostname)\n', '\n', 'docker run --label com.docker.editions.system --log-driver=json-file --restart=no -it -e LB_NAME -e SUB_ID -e ROLE -e REGION -e TENANT_ID -e APP_ID -e APP_SECRET -e ACCOUNT_ID -e GROUP_NAME -e PRIVATE_IP -e DOCKER_FOR_IAAS_VERSION -e SWARM_INFO_STORAGE_ACCOUNT -e SWARM_LOGS_STORAGE_ACCOUNT -e AZURE_HOSTNAME -v /var/run/docker.sock:/var/run/docker.sock -v /usr/bin/docker:/usr/bin/docker -v /var/lib/docker:/var/lib/docker -v /var/log:/var/log docker4x/init-azure:\"$DOCKER_FOR_IAAS_VERSION\"\n', '\n', 'docker run --privileged -d -v /var/run/docker.sock:/var/run/docker.sock -e WSID=\"$OMS_WORKSPACE_ID\" -e KEY=\"$OMS_WORKSPACE_KEY\" -p 127.0.0.1:25225:25225 --name=\"omsagent\" -h=`hostname` --restart=always microsoft/oms\n')]",
+    "Description": "Docker for Azure 17.03.0 (17.03.0-ce-azure1)",
+    "DockerProviderTag": "8CF0E79C-DF97-4992-9B59-602DB544D354",
     "groupName": "[resourceGroup().name]",
-    "imageOffer": "docker4azure",
+    "imageOffer": "docker-ce",
     "imagePublisher": "docker",
     "imageReference": {
       "offer": "[variables('imageOffer')]",
@@ -690,8 +600,8 @@
       "sku": "[variables('imageSku')]",
       "version": "[variables('imageVersion')]"
     },
-    "imageSku": "docker4azure",
-    "imageVersion": "1.13.7",
+    "imageSku": "docker-ce",
+    "imageVersion": "1.0.0",
     "lbBackendAddressPoolID": "[concat(variables('lbID'),'/backendAddressPools/default')]",
     "lbID": "[resourceId('Microsoft.Network/loadBalancers',variables('lbName'))]",
     "lbName": "externalLoadBalancer",
@@ -699,19 +609,19 @@
     "lbSSHBackendAddressPoolID": "[concat(variables('lbSSHID'),'/backendAddressPools/default')]",
     "lbSSHFrontEndIPConfigID": "[concat(variables('lbSSHID'),'/frontendIPConfigurations/default')]",
     "lbSSHID": "[resourceId('Microsoft.Network/loadBalancers',variables('lbSSHName'))]",
-    "lbSSHNATPoolID": "[concat(variables('lbSSHID'),'/inboundNatPools/default')]",
     "lbSSHName": "externalSSHLoadBalancer",
+    "lbSSHNATPoolID": "[concat(variables('lbSSHID'),'/inboundNatPools/default')]",
     "lbSSHPublicIPAddressName": "[concat(variables('basePrefix'), '-', variables('lbSSHName'), '-public-ip')]",
     "managerAddressPrefix": "172.16.0.0/24",
     "managerCount": "[parameters('managerCount')]",
     "managerEndpointDNSNamePrefix": "manager",
     "managerFirstAddr": 5,
-    "managerNSGID": "[resourceId('Microsoft.Network/networkSecurityGroups', variables('managerNSGName'))]",
-    "managerNSGName": "[concat(variables('basePrefix'), '-manager-nsg')]",
     "managerVMNamePrefix": "swarm-manager",
     "managerVMSize": "[parameters('managerVMSize')]",
     "natSSHEndPort": 50100,
     "natSSHStartPort": 50000,
+    "omswsID": "[parameters('OMSWorkSpaceId')]",
+    "omswsKey": "[parameters('OMSWorkSpaceKey')]",
     "sshKeyPath": "[concat('/home/', variables('adminUsername'), '/.ssh/authorized_keys')]",
     "sshRSAPublicKey": "[parameters('sshPublicKey')]",
     "storageAccountSuffix": "docker",
