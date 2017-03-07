@@ -5,6 +5,8 @@ description: Learn how to deploy Docker for Azure with one click along with Oper
 
 keywords: docker, docker for azure , install, orchestration, management, azure, swarm, OMS, monitoring, scaling
 ---
+**[Docker for Azure Release Notes](https://docs.docker.com/docker-for-azure/release-notes/). This template has two simple additions for pushing OMS dockerized agent in each of the nodes (managers and workers) on top of [Template - Docker for Azure Stable Channel 17.03.0 CE Release date: 02/08/2017](https://download.docker.com/azure/stable/Docker.tmpl)**
+
 
 # azure-docker4azureoms
 Docker for Azure with OMS and some more stacks
@@ -40,7 +42,7 @@ Table of Contents
  * Obtain Workspace Key
 
 #### Deploy and Visualize
-<a href="https://preview.portal.azure.com/#create/Microsoft.Template/uri/http%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-docker4azureoms%2Fmaster%2Fazuredeploy.json" target="_blank"><img alt="Deploy to Azure" src="http://azuredeploy.net/deploybutton.png" /></a>
+<a href="https://preview.portal.azure.com/#create/Microsoft.Template/uri/http%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-docker4azureoms%2Fmaster%2Fazuredeploy.json" target="_blank"><img alt="Deploy to Azure" src="https://raw.githubusercontent.com/Azure/azure-docker4azureoms/master/dockerce4azure.png" /></a>
 
 <a href="http://armviz.io/#/?load=https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-docker4azureoms%2Fmaster%2Fazuredeploy.json" target="_blank">  <img src="http://armviz.io/visualizebutton.png" /> </a> 
 
