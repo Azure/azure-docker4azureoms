@@ -44,7 +44,7 @@ Table of Contents
 
 <a href="http://armviz.io/#/?load=https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-docker4azureoms%2Fmaster%2Fazuredeploy.json" target="_blank">  <img src="http://armviz.io/visualizebutton.png" /> </a> 
 
-**[Docker for Azure Release Notes](https://docs.docker.com/docker-for-azure/release-notes/). This template has two simple additions for pushing OMS dockerized agent in each of the nodes (managers and workers) on top of [Template - Docker for Azure v1.13.1-2 (stable)](https://download.docker.com/azure/stable/Docker.tmpl)**
+**[Docker for Azure Release Notes](https://docs.docker.com/docker-for-azure/release-notes/). This template has two simple additions for pushing OMS dockerized agent in each of the nodes (managers and workers) on top of [Template - Docker for Azure Stable Channel 17.03.0 CE Release date: 02/08/2017](https://download.docker.com/azure/stable/Docker.tmpl)**
 
 #### MSFT OSCC
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
@@ -103,7 +103,7 @@ Let's see our system behavior under load: Account service calls Statistics servi
 | Well behaving system. The throughput is about 22 requests/second. Small number of active threads in Statistics service. The median service time is about 50 ms. | The number of active threads is growing. We can see purple number of thread-pool rejections and therefore about 30-40% of errors, but circuit is still closed. | Half-open state: the ratio of failed commands is more than 50%, the circuit breaker kicks in. After sleep window amount of time, the next request is let through. | 100 percent of the requests fail. The circuit is now permanently open. Retry after sleep time won't close circuit again, because the single request is too slow.
 
 #### Simplest Topology Specs
-The Simplest topology spec of 1 Manager and 2 worker nodes is as follows for [Docker for Azure v 1.13.0-2](https://docs.docker.com/docker-for-azure/release-notes/)
+The Simplest topology spec of 1 Manager and 2 worker nodes is as follows for [Template - Docker for Azure Stable Channel 17.03.0 CE Release date: 02/08/2017](https://download.docker.com/azure/stable/Docker.tmpl)(https://docs.docker.com/docker-for-azure/release-notes/)
 
 ![Simplest Topology](https://raw.githubusercontent.com/Azure/azure-docker4azureoms/master/Docker4AzurebyRancher.png)
 
