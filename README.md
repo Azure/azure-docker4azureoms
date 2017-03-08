@@ -39,13 +39,19 @@ Table of Contents
 * [Containerized helper-script to help create the Service Principal](https://docs.docker.com/docker-for-azure/#service-principal)
  * Obtain App ID
  * Obtain App Secret
+ 
 <code>
  $ docker run -ti docker4x/create-sp-azure sp-name rg-name rg-region
+ 
 ...
 Your access credentials =============================
+
 AD App ID:      *******
+
 AD App Secret:  *******
+
 AD Tenant ID:   *******
+
 </code>
 
 
