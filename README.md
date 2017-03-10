@@ -144,9 +144,9 @@ Patches can be submitted as GitHub pull requests. If using GitHub please make su
 * Add The solutions "Agent Health", "Activity Log Analytics" and "Container" Solutions from the "Solutions Gallery" of the OMS Portal of the workspace.
 * While Deploying the Docker for Azure Template just the WorkspaceID and the Key are to be mentioned and all will be registered including all containers in any nodes of the Docker for Azure auto cluster.
 * Then one can login to https://OMSWorkspaceName.portal.mms.microsoft.com/#Workspace/overview/solutions/details/index?solutionId=Containers and check all containers running for Docker for Azure and use Log Analytics and if Required perform automated backups of the APK Based sys using the corresponding Solutions for OMS.
-* OMS Monitoring 3 Swarm Managers with 4 workers and all their containers.
+* OMS Monitoring 3 Swarm Managers with 3 workers and all their containers.
 
-![OMS Docker 4 Azure](https://raw.githubusercontent.com/Azure/azure-docker4azureoms/master/OMSDocker4Azure.png)
+![OMS Docker 4 Azure](https://raw.githubusercontent.com/Azure/azure-docker4azureoms/master/OMSDocker4Azure1.png)
 #### Scaling
 
 VMSS auto scale is by default off to be addressed in a [later version](https://forums.docker.com/t/autoscaling-azure-virtual-machine-scale-sets/26030/4)
