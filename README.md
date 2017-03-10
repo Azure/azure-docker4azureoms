@@ -155,5 +155,10 @@ VMSS auto scale is by default off to be addressed in a [later version](https://f
 
 ![Manual VMSS Scaling](https://cdn-enterprise.discourse.org/docker/uploads/default/original/2X/8/849dfcceb32f5c89eddfc90a58008c6bb17a0043.png)
 
-![OMS Auto Post Scaling](https://raw.githubusercontent.com/Azure/azure-docker4azureoms/master/ScaledWorkers.png)
+![OMS Post Scaling](https://raw.githubusercontent.com/Azure/azure-docker4azureoms/master/ScaledWorkers1.png)
+
+Rancher overlay for "scaled" topology
+
+![Rancher Post Scaling](https://raw.githubusercontent.com/Azure/azure-docker4azureoms/master/ScaledRancherWorkers1.png)
+
 
