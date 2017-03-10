@@ -113,12 +113,12 @@ Let's see our system behavior under load: Account service calls Statistics servi
 #### Simplest Topology Specs
 The Simplest topology spec of 1 Manager and 2 worker nodes is as follows for [ Docker for Azure Stable Channel 17.03.0 CE Release date: 02/08/2017 - Release Date](https://docs.docker.com/docker-for-azure/release-notes/)
 
-![Simplest Topology](https://raw.githubusercontent.com/Azure/azure-docker4azureoms/master/Docker4AzurebyRancher.png)
+![Simplest Topology](https://raw.githubusercontent.com/Azure/azure-docker4azureoms/master/Docker4AzurebyRancher1.png)
 
 ##### Multi Manager with scaled worker
 3 Swarm Managers with Scaled 4th Worker as below : 
 
-![3 Swarm Managers with Autoscaled 4th Worker](https://raw.githubusercontent.com/Azure/azure-docker4azureoms/master/Docker4AzurebyRancherAutoScale.png)
+![3 Swarm Managers with Autoscaled 4th Worker](https://raw.githubusercontent.com/Azure/azure-docker4azureoms/master/Docker4AzurebyRancherAutoScale1.png)
 
 ##### Raft HA
 The consensus algorithm must ensure that if any state machine applies set x to 3 as the nth command, no other state machine will ever apply a different nth command. Raftscope as below for 5 Swarm Managers.
