@@ -169,20 +169,20 @@ VMSS auto scale is by default off to be addressed in a [later version](https://f
 
 Presently Docker is using the docker4x repository for completely private images for catering to standard design of Docker CE and Docker EE for Public Cloud. The following are the last ones for Azure including the ones used for Docker Azure EE (DDC) and Docker CE
 
-* docker4x/upgrademon-azure
-* docker4x/requp-azure
-* docker4x/upgrade-azure
-* docker4x/upg-azure
-* docker4x/ddc-init-azure
-* docker4x/l4controller-azure
-* docker4x/create-sp-azure
-* docker4x/logger-azure
-* docker4x/azure-vhd-utils
-* docker4x/l4azure
-* docker4x/waalinuxagent
-* docker4x/meta-azure
-* docker4x/cloud-azure
-* docker4x/guide-azure
-* docker4x/init-azure
-* docker4x/agent-azure
+* [docker4x/upgrademon-azure](https://hub.docker.com/r/docker4x/upgrademon-azure)
+* [docker4x/requp-azure](https://hub.docker.com/r/docker4x/requp-azure)
+* [docker4x/upgrade-azure](https://hub.docker.com/r/docker4x/upgrade-azure)
+* [docker4x/upg-azure](https://hub.docker.com/r/docker4x/upg-azure)
+* [docker4x/ddc-init-azure](https://hub.docker.com/r/docker4x/ddc-init-azure)
+* [docker4x/l4controller-azure](https://hub.docker.com/r/docker4x/l4controller-azure)
+* [docker4x/create-sp-azure](https://hub.docker.com/r/docker4x/create-sp-azure)
+* [docker4x/logger-azure](https://hub.docker.com/r/docker4x/logger-azure)
+* [docker4x/azure-vhd-utils](https://hub.docker.com/r/docker4x/azure-vhd-utils)
+* [docker4x/l4azure](https://hub.docker.com/r/docker4x/l4azure)
+* [docker4x/waalinuxagent](https://hub.docker.com/r/docker4x/waalinuxagent)
+* [docker4x/meta-azure](https://hub.docker.com/r/docker4x/meta-azure)
+* [docker4x/cloud-azure](https://hub.docker.com/r/docker4x/cloud-azure)
+* [docker4x/guide-azure](https://hub.docker.com/r/docker4x/guide-azure)
+* [docker4x/init-azure](https://hub.docker.com/r/docker4x/init-azure)
+* [docker4x/agent-azure](https://hub.docker.com/r/docker4x/agent-azure)
 
