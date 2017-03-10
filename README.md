@@ -33,6 +33,7 @@ Table of Contents
       * [Patches and pull requests](#patches-and-pull-requests)
       * [Usage of Operational Management Suite](#usage-of-operational-management-suite)
       * [Scaling](#scaling)
+      * [Note on Docker EE and Docker CE for Azure](#note-on-docker-ee-and-docker-ce-for-azure)
          
 #### Prerequisites
 
@@ -164,5 +165,24 @@ VMSS auto scale is by default off to be addressed in a [later version](https://f
 
 ![Rancher Post Scaling](https://raw.githubusercontent.com/Azure/azure-docker4azureoms/master/ScaledRancherWorkers.png)
 
+#### Note on Docker EE and Docker CE for Azure
 
+Presently Docker is using the docker4x repository for completely private images for catering to standard design of Docker CE and Docker EE for Public Cloud. The following are the last ones for Azure including the ones used for Docker Azure EE (DDC) and Docker CE
+
+* docker4x/upgrademon-azure
+* docker4x/requp-azure
+* docker4x/upgrade-azure
+* docker4x/upg-azure
+* docker4x/ddc-init-azure
+* docker4x/l4controller-azure
+* docker4x/create-sp-azure
+* docker4x/logger-azure
+* docker4x/azure-vhd-utils
+* docker4x/l4azure
+* docker4x/waalinuxagent
+* docker4x/meta-azure
+* docker4x/cloud-azure
+* docker4x/guide-azure
+* docker4x/init-azure
+* docker4x/agent-azure
 
