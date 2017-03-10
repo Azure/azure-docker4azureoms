@@ -77,13 +77,13 @@ For more information see the [Code of Conduct FAQ](https://opensource.microsoft.
 <code> wget  https://raw.githubusercontent.com/Azure/azure-docker4azureoms/master/docker-compose-ekv3.yml && docker stack deploy -c docker-compose-ekv3.yml elasticsearchkibana </code>
 
 *  ElasticSearch Service: http://Docker4AzureRGExternalLoadBalance:9200/ 
-*  Kibana Service: http://Docker4AzureRGExternalLoadBalance:5601/ \
+*  Kibana Service: http://Docker4AzureRGExternalLoadBalance:5601/
 
 <code>wget https://raw.githubusercontent.com/Azure/azure-docker4azureoms/master/docker-compose-votingappv3.yml && docker stack deploy -c docker-compose-votingappv3.yml votingapp</code>
 
 *  Vote: http://Docker4AzureRGExternalLoadBalance:5002/ 
 *  Voting Results: http://Docker4AzureRGExternalLoadBalance:5003
-*  @manomarks Swarm Visualizer: http://Docker4AzureRGExternalLoadBalance:8083
+*  ~~@manomarks Swarm Visualizer: http://Docker4AzureRGExternalLoadBalance:8083~~ - Not valid for 17.03.0 CE anymore.
 
 #### Spring Cloud Netflix Samples
 Forked from https://github.com/sqshq/PiggyMetrics, this example demonstrates the use of Netlix OSS API with Spring. The docker-compose file has been updated to make use of the latest features of Compose 3.0; it's still a work in progress. The service container logs are drained into OMS.
