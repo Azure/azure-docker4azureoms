@@ -86,6 +86,8 @@ For more information see the [Code of Conduct FAQ](https://opensource.microsoft.
 *  Voting Results: http://Docker4AzureRGExternalLoadBalance:5003
 *  ~~@manomarks Swarm Visualizer: http://Docker4AzureRGExternalLoadBalance:8083~~ - Not valid for 17.03.0 CE anymore.
 
+<code> wget https://raw.githubusercontent.com/robinong79/docker-swarm-monitoring/master/composefiles/docker-compose-monitoring.yml && docker stack deploy -c docker-compose-monitoring.yml </code>
+
 #### Spring Cloud Netflix Samples
 Forked from https://github.com/sqshq/PiggyMetrics, this example demonstrates the use of Netlix OSS API with Spring. The docker-compose file has been updated to make use of the latest features of Compose 3.0; it's still a work in progress. The service container logs are drained into OMS.
 
