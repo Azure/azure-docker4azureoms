@@ -179,7 +179,7 @@ Presently Docker is using the docker4x repository for completely private images 
 * [docker4x/logger-azure](https://hub.docker.com/r/docker4x/logger-azure)
 * [docker4x/azure-vhd-utils](https://hub.docker.com/r/docker4x/azure-vhd-utils)
 * [docker4x/l4azure](https://hub.docker.com/r/docker4x/l4azure)
-* [docker4x/waalinuxagent](https://hub.docker.com/r/docker4x/waalinuxagent)
+* [docker4x/waalinuxagent](https://hub.docker.com/r/docker4x/waalinuxagent) (dated)
 * [docker4x/meta-azure](https://hub.docker.com/r/docker4x/meta-azure)
 * [docker4x/cloud-azure](https://hub.docker.com/r/docker4x/cloud-azure)
 * [docker4x/guide-azure](https://hub.docker.com/r/docker4x/guide-azure)
