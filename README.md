@@ -167,7 +167,8 @@ VMSS auto scale is by default off to be addressed in a [later version](https://f
 
 #### Note on Docker EE and Docker CE for Azure
 
-Presently Docker is using the docker4x repository for completely private images for catering to standard design of Docker CE and Docker EE for Public Cloud. The following are the last ones for Azure including the ones used for Docker Azure EE (DDC) and Docker CE
+Presently Docker is using the docker4x repository for entirely private images with dockerized small footprint go apps for catering to standard design of Docker CE and Docker EE for Public Cloud. The following are the last ones for Azure including the ones used for Docker Azure EE (DDC) and Docker CE. The base system service stack for Docker for CE and EE can be easily obtained via any standard monitoring like OMS or names obtained via
+<code>docker search docker4x --limit 100|grep azure</code>
 
 * [docker4x/upgrademon-azure](https://hub.docker.com/r/docker4x/upgrademon-azure)
 * [docker4x/requp-azure](https://hub.docker.com/r/docker4x/requp-azure)
