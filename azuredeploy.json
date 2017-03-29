@@ -323,7 +323,7 @@
           "osProfile": {
             "adminUsername": "[variables('adminUsername')]",
             "computerNamePrefix": "[variables('managerVMNamePrefix')]",
-            "customData": "[base64(concat('#!/bin/bash', '\n',  'export ROLE=\"MANAGER\"', '\n', 'export LB_IP=\"', reference(resourceId('Microsoft.Network/publicIPAddresses', variables('lbPublicIPAddressName'))).ipAddress, '\"', '\n', 'docker service create  --name=viz  --publish=8087:8080/tcp  --constraint=node.role==manager --mount=type=bind,src=/var/run/docker.sock,dst=/var/run/docker.sock  manomarks/visualizer', '\n', variables('customData')))]",
+            "customData": "[base64(concat('#!/bin/bash', '\n',  'export ROLE=\"MANAGER\"', '\n', 'export LB_IP=\"', reference(resourceId('Microsoft.Network/publicIPAddresses', variables('lbPublicIPAddressName'))).ipAddress, '\"', '\n', variables('customData')))]",
             "linuxConfiguration": {
               "disablePasswordAuthentication": true,
               "ssh": {
