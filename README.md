@@ -84,7 +84,8 @@ For more information see the [Code of Conduct FAQ](https://opensource.microsoft.
 
 *  Vote: http://Docker4AzureRGExternalLoadBalance:5002/ 
 *  Voting Results: http://Docker4AzureRGExternalLoadBalance:5003
-*  @manomarks Swarm Visualizer: http://Docker4AzureRGExternalLoadBalance:8080 - **Available automatically**
+*  @manomarks Swarm Visualizer: http://Docker4AzureRGExternalLoadBalance:8080 - 
+  * <code>docker service create  --name=viz  --publish=8087:8080/tcp  --constraint=node.role==manager --mount=type=bind,src=/var/run/docker.sock,dst=/var/run/docker.sock  manomarks/visualizer</code>
 
 <code>wget https://raw.githubusercontent.com/robinong79/docker-swarm-monitoring/master/composefiles/docker-compose-monitoring.yml &&  wget https://raw.githubusercontent.com/robinong79/docker-swarm-monitoring/master/composefiles/docker-compose-logging.yml && docker network create --driver overlay monitoring && docker network create --driver overlay logging && docker stack deploy -c docker-compose-logging.yml elk &&  docker stack deploy -c docker-compose-monitoring.yml prommon</code>
 
