@@ -8,5 +8,5 @@ services:
  kibana:
   image: kibana:latest
   ports:
-    - 8080:80
+    - 8085:8085
     - 5601:5601
