@@ -5,7 +5,7 @@ description: Learn how to deploy Docker for Azure with one click along with Oper
 
 keywords: docker, docker for azure , install, orchestration, management, azure, swarm, OMS, monitoring, scaling
 ---
-**[Docker for Azure Release Notes](https://docs.docker.com/docker-for-azure/release-notes/). This template has two simple additions for pushing OMS dockerized agent in each of the nodes (managers and workers) on top of [Template - Docker for Azure Stable Channel 17.03.0 CE Release date: 02/08/2017](https://download.docker.com/azure/stable/Docker.tmpl)**
+**[Docker for Azure Release Notes](https://docs.docker.com/docker-for-azure/release-notes/). This template has two simple additions for pushing OMS dockerized agent in each of the nodes (managers and workers) on top of [Template - Docker for Azure Stable Channel 17.03.1 CE Release date: 03/30/2017](https://download.docker.com/azure/stable/Docker.tmpl)**
 
 <a href="https://preview.portal.azure.com/#create/Microsoft.Template/uri/http%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-docker4azureoms%2Fmaster%2Fazuredeploy.json" target="_blank"><img alt="Deploy to Azure" src="https://raw.githubusercontent.com/Azure/azure-docker4azureoms/master/dockerce4azure.png" /></a>
 
