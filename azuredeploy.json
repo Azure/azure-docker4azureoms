@@ -601,7 +601,7 @@
       "version": "[variables('imageVersion')]"
     },
     "imageSku": "docker-ce",
-    "imageVersion": "1.0.0",
+    "imageVersion": "1.0.1",
     "lbBackendAddressPoolID": "[concat(variables('lbID'),'/backendAddressPools/default')]",
     "lbID": "[resourceId('Microsoft.Network/loadBalancers',variables('lbName'))]",
     "lbName": "externalLoadBalancer",
